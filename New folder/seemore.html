@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+        }
+        #container {
+            /* position: relative; */
+            width: 50%;
+            height: 50%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            margin-left: 8rem;
+            border-radius: 5%;
+
+
+        }
+        /* #container:hover {
+            background-color: chartreuse; */
+        /* } */
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+           margin-left: 2rem; 
+        }
+        img {
+            border-radius: 10% ;
+            margin-left: 15rem;
+        }
+        .add-cart-btn {
+            border: none;
+            background-color: rgba(229, 255, 0, 0.838);
+            border-radius: 50px;
+            position: absolute;
+            right: 10rem;
+            top: 6rem;
+            padding: 10px;
+            width: 150px;
+
+
+        }
+        .add-cart-btn:hover {
+            background-color: rgb(205, 184, 50);
+        }
+        
+    
+        
+
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        let product=document.getElementById("container")
+        let seemore=JSON.parse(localStorage.getItem("see"))
+        console.log(seemore);
+
+        let product_image=document.createElement("img")
+        
+        product_image.setAttribute("src",seemore.image)
+        product.appendChild(product_image)
+        
+
+        let h1=document.createElement("h1")
+        h1.innerText=seemore.title
+        product.appendChild(h1)
+
+        let p=document.createElement("p")
+        p.innerText=seemore.description
+        product.appendChild(p)
+
+        let h2=document.createElement("h2")
+        h2.innerText=`Rs.${seemore.price}`
+        product.appendChild(h2)
+
+        // let addbtn = document.createElement("button")
+        // addbtn.setAttribute("class","add-cart-btn")
+        // addbtn.innerText="Add to cart"
+        // product.appendChild(addbtn)
+        
+        // addbtn.addEventListener("click",()=>{
+        //     window.location.assign("./add to cart.html")
+        //     let cart=localStorage.getItem("add")
+        //     let cart1 = cart !=null ?JSON.parse(cart):[]
+        //     // console.log(JSON.parse(cart1),'gg');
+        //     localStorage.setItem("add", JSON.stringify(a[ind]))
+            
+        // })
+        // product.appendChild(addbtn)
+    //   let removebtn=document.createElement("button")
+    //   removebtn.setAttribute("class","remove-btn")
+    //   removebtn.innerText="Remove-item"
+    //   product.appendChild(removebtn)
+    //   removebtn.addEventListener("click",()=>{
+
+    //     localStorage.clear()
+    //   })
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to html</title>
+    <style>
+        img {
+            width: 200px;
+            background: red ;
+            color: greenyellow;
+            
+        }
+        h2 {
+          font-size: 1rem;
+          background-color: rgba(255, 0, 0, 0.402);
+          display: inline;
+          border-radius: 50%;
+        }
+        
+
+        .buy-now {
+          border: none;
+          background-color: rgb(255, 174, 0);
+          padding: 10px;
+          border-radius: 20px;
+          width: 100px;
+          
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <script>
+      let arr=[]
+      let product = document.getElementById("container")
+      let card=JSON.parse(localStorage.getItem("add"))
+      // console.log(card);
+      card==null?card=[]:card=card
+      arr.push(card)
+
+      
+      arr.map((val,ind,arr)=>{
+      let product_image=document.createElement("img")
+      product_image.setAttribute("src",val.image)
+      product.appendChild(product_image)
+
+      let h1 = document.createElement("h1")
+      h1.innerText=val.title
+      product.appendChild(h1)
+
+      // let h2=document.createElement("h2")
+      // h2.innerText=val.image 
+      // product.appendChild(h2)
+
+      let p=document.createElement("p")
+      p.innerText="Hot deal"
+      product.appendChild(p)
+      })
+      
+      let buynow=document.createElement("button")
+      buynow.setAttribute("class","buy-now")
+      buynow.innerText="Buynow"
+      buynow.addEventListener("click",()=>{
+        window.location.assign("./buy now.html")
+
+      })
+      product.appendChild(buynow)
+        
+      // let addbtn = document.createElement("button")
+      //   addbtn.setAttribute("class","add-cart-btn")
+      //   addbtn.innerText="Add to cart"
+      //   product.appendChild(addbtn)
+        
+      //   addbtn.addEventListener("click",()=>{
+      //       window.location.assign("./add to cart.html")
+      //       let cart=localStorage.getItem("add")
+      //       let cart1 = cart !=null ?JSON.parse(cart):[]
+      //       console.log(JSON.parse(cart1),'gg');
+      //       localStorage.setItem("add", JSON.stringify(a[ind]))
+            
+      //   })
+      //   product.appendChild(addbtn)
+      // let removebtn=document.createElement("button")
+      // removebtn.setAttribute("class","remove-btn")
+      // removebtn.innerText="Remove-item"
+      // product.appendChild(removebtn)
+      // removebtn.addEventListener("click",()=>{
+      //   localStorage.clear()
+      // })
+
+    </script>
+</body>
+</html>

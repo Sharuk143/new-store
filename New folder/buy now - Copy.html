@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 10px;
+            border: 2px black;
+            
+        }
+        button {
+            background-color: rgb(4, 101, 133);
+            border: none;
+            padding: 10px;
+            width: 100px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <forms actions>
+        <div id="container">
+        <div class="detail">
+            <input type="text" placeholder="Name"><br>
+            
+            <input type="text" placeholder="Mobile Number"><br>
+            <input type="text" placeholder="H-No , Buliding name"><br>
+            <input type="text area" placeholder="address" ><br>
+            <button>Submit</button>
+        </div>
+        </div>
+        
+        <script>
+            let product=document.getElementById("conatainer")
+            let btn=document.getElementsByTagName("button")
+            
+            btn[0].addEventListener("click",()=>{
+                console.log("click");
+                window.location.assign("ordersuccess.html")
+            })
+            
+
+        </script>
+        
+    </forms>
+</body>
+</html>
